@@ -25,9 +25,9 @@ if [[ "${JAVA_OPTS}" == *-Xmx* ]]; then
   export JAVA_TOOL_OPTIONS=${JAVA_TOOL_OPTIONS:-"-Dfile.encoding=UTF-8"}
 else
   default_java_opts="${default_java_mem_opts} -Dfile.encoding=UTF-8"
-  export JAVA_OPTS="${default_java_opts} $JAVA_OPTS"
+  #export JAVA_OPTS="${default_java_opts} $JAVA_OPTS"
   if [[ "${DYNO}" != *run.* ]]; then
-    export JAVA_TOOL_OPTIONS=${JAVA_TOOL_OPTIONS:-${default_java_opts}}
+    #export JAVA_TOOL_OPTIONS=${JAVA_TOOL_OPTIONS:-${default_java_opts}}
   fi
   if [[ "${DYNO}" == *web.* ]]; then
     echo "Setting JAVA_TOOL_OPTIONS defaults based on dyno size. Custom settings will override them."
